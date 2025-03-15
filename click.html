@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unnecessary Button Clicking</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f0f0f0;
+      padding: 20px;
+    }
+    button {
+      padding: 20px;
+      font-size: 24px;
+      background-color: #ff5733;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #c0392b;
+    }
+    .message {
+      font-size: 24px;
+      margin-top: 20px;
+      color: #2c3e50;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Click the Button!</h1>
+  <button onclick="generateMessage()">Click Me!</button>
+  
+  <div class="message" id="message">Nothing has happened yet...</div>
+
+  <script>
+    const messages = [
+      "Keep going, nothing to see here.",
+      "Why are you still clicking?",
+      "This is pointless, right?",
+      "Clicking for the sake of clicking.",
+      "Congrats, you clicked a button!",
+      "You're really committed, huh?",
+      "The button does absolutely nothing.",
+      "Well, that was a click.",
+      "Isn't this fun? Not really...",
+      "You're doing great, keep clicking!"
+    ];
+
+    function generateMessage() {
+      const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+      document.getElementById('message').textContent = randomMessage;
+    }
+  </script>
+
+</body>
+</html>
