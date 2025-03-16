@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Unnecessary Button Clicking</title>
+  <title>Click me</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -73,7 +73,28 @@
       "The button does absolutely nothing.",
       "Well, that was a click.",
       "Isn't this fun? Not really...",
-      "You're doing great, keep clicking!"
+      "You're doing great, keep clicking!",
+      "Is this what you do with your free time?",
+      "You must really be bored, huh?",
+      "Clicking the button won’t fix your life.",
+      "Do you click things for a living?",
+      "Is your finger getting tired yet?",
+      "That was a click... now what?",
+      "You’ve clicked more times than most people achieve in a day.",
+      "You’re really into this, aren’t you?",
+      "This is the highlight of your day, isn’t it?",
+      "You must have a lot of time on your hands.",
+      "Well, you’ve done it again... Congratulations.",
+      "Don’t you have anything better to do?",
+      "Oh, you clicked again? Really?",
+      "Clicking... The most exciting part of your day.",
+      "How many times will you click before you realize nothing changes?",
+      "You’re still here? Impressive!",
+      "Keep clicking. Maybe something will happen... probably not.",
+      "If I had a nickel for every click, I’d still be broke.",
+      "Clicking away like a pro. Good for you.",
+      "Are you sure you’re not getting addicted to this?",
+      "good job fucko",
     ];
 
     let clickCount = 0; // Variable to store click count
@@ -87,7 +108,13 @@
       document.getElementById('message').textContent = randomMessage;
 
       // Update the click count display
-      document.getElementById('counter').textContent = `Click Count: ${clickCount}`;
+      const counterElement = document.getElementById('counter');
+      counterElement.textContent = `Click Count: ${clickCount}`;
+
+      // Change the color of the counter to red if click count reaches 100
+      if (clickCount >= 10) {
+        counterElement.style.color = 'red';
+      }
     }
   </script>
 
