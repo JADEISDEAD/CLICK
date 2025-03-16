@@ -111,16 +111,20 @@
       const counterElement = document.getElementById('counter');
       counterElement.textContent = `Click Count: ${clickCount}`;
 
-      // Change the color of the counter based on click count
-      if (clickCount >= 100) {
-        counterElement.style.color = 'red';
-      } else if (clickCount >= 200) {
-        counterElement.style.color = 'green';
-      } else if (clickCount >= 300) {
-        counterElement.style.color = 'purple';
-      } else if (clickCount >= 400) {
-        counterElement.style.color = 'orange';
+      // Change the color of the counter every 100 clicks
+      if (clickCount % 100 === 0) {
+        // Generate a random color using RGB values
+        const randomColor = getRandomColor();
+        counterElement.style.color = randomColor;
       }
+    }
+
+    // Function to generate a random color
+    function getRandomColor() {
+      const r = Math.floor(Math.random() * 256); // Random value for red
+      const g = Math.floor(Math.random() * 256); // Random value for green
+      const b = Math.floor(Math.random() * 256); // Random value for blue
+      return `rgb(${r}, ${g}, ${b})`; // Return the color in RGB format
     }
   </script>
 
