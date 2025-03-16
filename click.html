@@ -29,32 +29,38 @@
       margin-top: 20px;
       color: #2c3e50;
     }
-      .custom-button {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            border: none;
-            background: none;
-            cursor: pointer;
-        }
-        .custom-button img {
-            width: 40px;
-            height: 40px;
-        }
-        .custom-button img:hover {
-            opacity: 0.8;
-        }
+    .counter {
+      font-size: 24px;
+      margin-top: 20px;
+      color: #3498db;
+    }
+    .custom-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      border: none;
+      background: none;
+      cursor: pointer;
+    }
+    .custom-button img {
+      width: 40px;
+      height: 40px;
+    }
+    .custom-button img:hover {
+      opacity: 0.8;
+    }
   </style>
 </head>
 <body>
   <a href="http://jadeisdead.com/" target="_blank" class="custom-button">
-        <img src="https://media.tenor.com/yso9Ncqwm5UAAAAi/click-subscribe.gif" alt="Custom Button">
-    </a>
+    <img src="https://media.tenor.com/yso9Ncqwm5UAAAAi/click-subscribe.gif" alt="Custom Button">
+  </a>
 
   <h1>Click the Button!</h1>
   <button onclick="generateMessage()">Click Me!</button>
-  
+
   <div class="message" id="message">Nothing has happened yet...</div>
+  <div class="counter" id="counter">Click Count: 0</div>
 
   <script>
     const messages = [
@@ -70,9 +76,18 @@
       "You're doing great, keep clicking!"
     ];
 
+    let clickCount = 0; // Variable to store click count
+
     function generateMessage() {
+      // Increment the click count
+      clickCount++;
+
+      // Display a random message
       const randomMessage = messages[Math.floor(Math.random() * messages.length)];
       document.getElementById('message').textContent = randomMessage;
+
+      // Update the click count display
+      document.getElementById('counter').textContent = `Click Count: ${clickCount}`;
     }
   </script>
 
