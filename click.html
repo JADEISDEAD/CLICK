@@ -49,6 +49,9 @@
     .custom-button img:hover {
       opacity: 0.8;
     }
+    .hidden {
+      display: none;
+    }
   </style>
 </head>
 <body>
@@ -56,8 +59,8 @@
     <img src="https://media.tenor.com/yso9Ncqwm5UAAAAi/click-subscribe.gif" alt="Custom Button">
   </a>
 
-  <h1>Click the Button!</h1>
-  <button onclick="generateMessage()">Click Me!</button>
+  <h1>Click Me</h1>
+  <button id="clickButton" onclick="generateMessage()">Click Me!</button>
 
   <div class="message" id="message">Nothing has happened yet...</div>
   <div class="counter" id="counter">Click Count: 0</div>
@@ -116,6 +119,13 @@
         // Generate a random color using RGB values
         const randomColor = getRandomColor();
         counterElement.style.color = randomColor;
+      }
+
+      // After 1000 clicks, hide the button and display a message
+      if (clickCount === 1000) {
+        document.getElementById('clickButton').classList.add('hidden'); // Hide the button
+        document.getElementById('message').textContent = "your really fucking stupid";
+        document.getElementById('counter').textContent = ""; // Optional: Remove the click counter text
       }
     }
 
